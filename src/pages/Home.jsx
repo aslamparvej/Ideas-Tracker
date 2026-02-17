@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { useUser } from '../lib/context/user';
 
 import Ideas from './Ideas';
+import Footer from '../components/footer/Footer';
+import LandingPage from './LandingPage';
 
 
 const Home = () => {
@@ -20,10 +22,7 @@ const Home = () => {
             </section>
           </>
         ) : (
-          <section className='login-to-container'>
-            <h2>Please login to submit an idea</h2>
-            <p><Link to="/login">Login or Register</Link></p>
-          </section>
+          <LandingPage />
         )}
       </div>
     </>

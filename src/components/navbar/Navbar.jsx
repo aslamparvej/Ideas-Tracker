@@ -31,6 +31,16 @@ function Navbar() {
               Home
             </Link>
           </li>
+          <li className="nav-list">
+            <a href="#features" className="nav-item">
+              Features
+            </a>
+          </li>
+          <li className="nav-list">
+            <a href="#how-it-works" className="nav-item">
+              How It Works
+            </a>
+          </li>
           <li className="nav-list" style={{display: "none"}}>
             <Link to="/ask-gpt" className="nav-item">
               Ask GPT
@@ -50,7 +60,7 @@ function Navbar() {
             </>
           ) : (
             <li className="nav-list">
-              <Link to="/login" className="nav-item">
+              <Link to="/login" className="nav-item login-btn">
                 Login
               </Link>
             </li>

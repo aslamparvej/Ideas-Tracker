@@ -12,6 +12,7 @@ import { UserProvider, useUser } from './lib/context/user';
 import { IdeasProvider } from './lib/context/ideas';
 
 import './App.css';
+import Footer from './components/footer/Footer';
 
 function App() {
   // const isLoginPage = window.location.pathname === "/login";
@@ -33,6 +34,7 @@ function App() {
               <Route path='ask-gpt' element={<AskGpt />}></Route>
             </Route>
           </Routes>
+          <Footer />
           </IdeasProvider>
         </UserProvider>
       </div>

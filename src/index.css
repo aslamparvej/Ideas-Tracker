@@ -1,13 +1,7 @@
 /* ------------- Google Fonts :: Begins ------------- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Karla:wght@300;400;500;600&display=swap');
 /* ------------- Google Fonts :: Ends ------------- */
-
-*{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
-}
 
 :root {
   --PRIMARY-COLOR: #0D9276;
@@ -25,6 +19,23 @@
 
   --PRIMARY-BORDER: 1px solid var(--BORDER-COLOR);
   --BORDER-RADIUS-SM: 5px;
+
+  --footer-height: 60px;
+  --footer-background-color: #f1f1f1;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+ font-family: 'Montserrat', sans-serif;
 }
 
 input:-internal-autofill-selected {
@@ -33,20 +44,96 @@ input:-internal-autofill-selected {
   background-color: transparent;
   color: fieldtext !important;
 }
-::-ms-input-placeholder { /* Edge 12-18 */
+
+::-ms-input-placeholder {
+  /* Edge 12-18 */
   color: #e0e0e0;
 }
 
 ::placeholder {
   color: #e0e0e0;
 }
+
 select:focus-visible {
   outline: none;
   border: var(--PRIMARY-BORDER);
 }
+
 a {
   text-decoration: none;
   color: var(--LINK-COLOR);
+}
+
+
+/* --------- Animations :: Begins --------- */
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* --------- Animations :: Ends --------- */
+
+.animate-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.1s;
+  opacity: 0;
+}
+
+.delay-2 {
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.delay-3 {
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.delay-4 {
+  animation-delay: 0.4s;
+  opacity: 0;
 }
 
 /* ------------- Button components :: Begins ------------- */
@@ -58,23 +145,32 @@ a {
   border-radius: var(--BORDER-RADIUS-SM);
   cursor: pointer;
 }
+
 .custom-btn-sm {
   padding: 0.2rem 1rem;
 }
+
+.custom-btn-lg {
+  padding: 0.75rem 1.5rem;
+}
+
 .custom-btn-outline {
   color: var(--PRIMARY-COLOR);
   background-color: transparent;
   border: 1px solid var(--PRIMARY-COLOR);
 }
+
 .custom-btn-primary {
   color: #FFF;
   background-color: var(--PRIMARY-COLOR);
   border: 1px solid var(--PRIMARY-COLOR);
 }
+
 .custom-btn-white {
-  background-color: var(--PRIMARY-COLOR);
-  border: 1px solid var(--PRIMARY-COLOR);
+  background-color: #FFF;
+  border: 1px solid #FFF;
 }
+
 /* ------------- Button components :: Ends ------------- */
 
 .d-none {
