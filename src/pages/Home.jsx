@@ -6,6 +6,7 @@ import { useUser } from '../lib/context/user';
 import Ideas from './Ideas';
 import Footer from '../components/footer/Footer';
 import LandingPage from './LandingPage';
+import Projects from './Projects';
 
 
 const Home = () => {
@@ -16,10 +17,11 @@ const Home = () => {
       <div className='home-container'>
         {user.current ? (
           <>
-            <section className='ideas-container-section'>
+            {/* <section className='ideas-container-section'>
               <h2>Latest Ideas</h2>
               <Ideas />
-            </section>
+            </section> */}
+            <Projects />
           </>
         ) : (
           <LandingPage />

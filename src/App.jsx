@@ -8,6 +8,8 @@ import Register from './pages/Register';
 import AddIdea from './pages/AddIdea';
 import AskGpt from './pages/AskGpt';
 
+import Project from './pages/Project';
+
 import { UserProvider, useUser } from './lib/context/user';
 import { IdeasProvider } from './lib/context/ideas';
 
@@ -32,6 +34,9 @@ function App() {
               <Route path='register' element={<Register />}></Route>
               <Route path='add-idea' element={<AddIdea />}></Route>
               <Route path='ask-gpt' element={<AskGpt />}></Route>
+              <Route path='projects' element={<Home />}></Route>
+              <Route path='project/new' element={<AddIdea />}></Route>
+              <Route path='project/:id' element={<Project />}></Route>
             </Route>
           </Routes>
           <Footer />
