@@ -801,7 +801,414 @@
   margin-bottom: 2rem;
 }
 
-/* --------- Projects Page :: Begins --------- */
+/* --------- Projects Page :: Ends --------- */
+
+/* --------- Project View Page :: Begins --------- */
+.project-view {
+  max-width: 1400px;
+  min-height: calc(100vh - 4.5rem);
+  margin: 0 auto;
+  margin-top: 4.5rem;
+  padding: 2rem;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--TEXT-COLOR);
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--BORDER-RADIUS-SM);
+  transition: all 0.3s;
+}
+
+.back-button:hover {
+  background: #f5f5f5;
+  color: var(--PRIMARY-COLOR);
+}
+
+.project-header {
+  background: #FFF;
+  border: var(--PRIMARY-BORDER);
+  border-radius: var(--BORDER-RADIUS-SM);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.project-header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 2rem;
+}
+
+
+.project-header__title-group {
+  flex: 1;
+}
+
+.project-header__status {
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.project-header__status--open {
+  background: var(--OPEN-COLOR-BACKGROUND);
+  color: var(--OPEN-COLOR);
+  border: 1px solid var(--OPEN-COLOR);
+}
+
+.project-header__status--inprogress {
+  background: var(--INPROGRESS-COLOR-BACKGROUND);
+  color: var(--INPROGRESS-COLOR);
+  border: 1px solid var(--INPROGRESS-COLOR);
+}
+
+.project-header__status--completed {
+  background: var(--COMPLATED-COLOR-BACKGROUND);
+  color: var(--COMPLATED-COLOR);
+  border: 1px solid var(--COMPLATED-COLOR);
+}
+
+.project-header__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.project-header__description {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.7;
+}
+
+.project-header__meta {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.9rem;
+  color: #888;
+  padding-top: 1.5rem;
+  border-top: var(--PRIMARY-BORDER);
+}
+
+.project-header__meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-header__actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.progress-section {
+  background: white;
+  border: var(--PRIMARY-BORDER);
+  border-radius: var(--BORDER-RADIUS-SM);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.progress-section__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.progress-section__title {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.progress-section__stats {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.progress-bar {
+  height: 12px;
+  background: #f0f0f0;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--PRIMARY-COLOR), var(--INPROGRESS-COLOR));
+  border-radius: 20px;
+  transition: width 0.6s ease;
+}
+
+/* Tasks */
+.tasks-section {
+  background: white;
+  border: var(--PRIMARY-BORDER);
+  border-radius: var(--BORDER-RADIUS-SM);
+  padding: 2rem;
+}
+
+.tasks-section__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.tasks-section__title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.tasks-section__count {
+  color: #666;
+  font-size: 0.9rem;
+  margin-left: 0.75rem;
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.task-item {
+  background: white;
+  border: var(--PRIMARY-BORDER);
+  border-radius: var(--BORDER-RADIUS-SM);
+  padding: 1.25rem 1.5rem;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.task-item:hover {
+  border-color: var(--PRIMARY-COLOR);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.task-item--completed {
+  opacity: 0.6;
+  background: #fafafa;
+}
+
+.task-item--completed .task-item__title {
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* Add Task Form */
+.add-task-form {
+  background: #f8f9fa;
+  border: 2px dashed var(--BORDER-COLOR);
+  border-radius: var(--BORDER-RADIUS-SM);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  transition: all 0.3s;
+}
+
+.add-task-form:focus-within {
+  border-color: var(--PRIMARY-COLOR);
+  background: white;
+}
+
+.add-task-form__input-group {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.add-task-form__input {
+  flex: 1;
+  padding: 0.875rem 1rem;
+  border: var(--PRIMARY-BORDER);
+  border-radius: var(--BORDER-RADIUS-SM);
+  font-family: 'Karla', sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.add-task-form__input:focus {
+  outline: none;
+  border-color: var(--PRIMARY-COLOR);
+  box-shadow: 0 0 0 3px rgba(13, 146, 118, 0.1);
+}
+
+.add-task-form__input::placeholder {
+  color: #999;
+}
+
+.add-task-form__select {
+  padding: 0.875rem 2.5rem 0.875rem 1rem;
+  border: var(--PRIMARY-BORDER);
+  border-radius: var(--BORDER-RADIUS-SM);
+  font-family: 'Karla', sans-serif;
+  font-size: 0.95rem;
+  background: white;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  min-width: 140px;
+  transition: all 0.3s;
+}
+
+.add-task-form__select:focus {
+  outline: none;
+  border-color: var(--PRIMARY-COLOR);
+  box-shadow: 0 0 0 3px rgba(13, 146, 118, 0.1);
+}
+
+.add-task-form__actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Checkbox */
+.task-item__checkbox {
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  border: 2px solid var(--BORDER-COLOR);
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  background: white;
+}
+
+.task-item__checkbox:hover {
+  border-color: var(--PRIMARY-COLOR);
+}
+
+.task-item__checkbox--checked {
+  background: var(--PRIMARY-COLOR);
+  border-color: var(--PRIMARY-COLOR);
+  color: white;
+  font-size: 0.75rem;
+}
+
+/* Content */
+.task-item__content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.task-item__title {
+  font-weight: 600;
+  font-size: 1rem;
+  flex: 1;
+}
+
+.task-item__priority {
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.task-item__priority--high {
+  background: var(--DANGER-COLOR-BACKGROUND);
+  color: var(--DANGER-COLOR);
+  border: 1px solid var(--DANGER-COLOR);
+}
+
+.task-item__priority--medium {
+  background: #ffa50040;
+  color: #ff8c00;
+  border: 1px solid #ffa500;
+}
+
+.task-item__priority--low {
+  background: var(--OPEN-COLOR-BACKGROUND);
+  color: var(--OPEN-COLOR);
+  border: 1px solid var(--OPEN-COLOR);
+}
+
+/* Actions */
+.task-item__actions {
+  display: flex;
+  gap: 0.5rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.task-item:hover .task-item__actions {
+  opacity: 1;
+}
+
+.task-item__action-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #666;
+  transition: all 0.2s;
+  border-radius: var(--BORDER-RADIUS-SM);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.task-item__action-btn:hover {
+  background: #f5f5f5;
+  color: var(--TEXT-COLOR);
+}
+
+.task-item__action-btn--danger:hover {
+  background: var(--DANGER-COLOR-BACKGROUND);
+  color: var(--DANGER-COLOR);
+}
+
+/* Empty State  */
+.tasks-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #999;
+}
+
+.tasks-empty__icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.3;
+}
+
+.tasks-empty__text {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.tasks-empty__subtext {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+
+/* --------- Project View Page :: Ends --------- */
 
 /* --------- Form section :: Begins --------- */
 .app-container .form-container {

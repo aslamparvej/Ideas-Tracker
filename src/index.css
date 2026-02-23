@@ -35,7 +35,7 @@ html {
 }
 
 body {
- font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 input:-internal-autofill-selected {
@@ -147,7 +147,7 @@ a {
 }
 
 .custom-btn-sm {
-  padding: 0.2rem 1rem;
+  padding: 0.2rem 0.75rem;
 }
 
 .custom-btn-lg {
@@ -169,6 +169,26 @@ a {
 .custom-btn-white {
   background-color: #FFF;
   border: 1px solid #FFF;
+}
+
+.custom-btn-secondary {
+  background-color: transparent;
+  color: var(--TEXT-COLOR);
+  border: var(--PRIMARY-BORDER);
+}
+
+.custom-btn-secondary:hover {
+  border-color: var(--PRIMARY-COLOR);
+  color: var(--PRIMARY-COLOR);
+}
+
+.custom-btn-danger {
+  background: var(--DANGER-COLOR);
+  color: white;
+}
+
+.custom-btn-danger:hover {
+  background: #d62828;
 }
 
 /* ------------- Button components :: Ends ------------- */

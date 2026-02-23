@@ -30,8 +30,10 @@ function App() {
           <Routes>
             <Route path='/'>
               <Route index element={<Home />}></Route>
+
               <Route path='login' element={<Login />}></Route>
               <Route path='register' element={<Register />}></Route>
+              
               <Route path='add-idea' element={<AddIdea />}></Route>
               <Route path='ask-gpt' element={<AskGpt />}></Route>
               <Route path='projects' element={<Home />}></Route>
