@@ -31,21 +31,6 @@ function Navbar() {
               Home
             </Link>
           </li>
-          <li className="nav-list">
-            <a href="#features" className="nav-item">
-              Features
-            </a>
-          </li>
-          <li className="nav-list">
-            <a href="#how-it-works" className="nav-item">
-              How It Works
-            </a>
-          </li>
-          <li className="nav-list" style={{display: "none"}}>
-            <Link to="/ask-gpt" className="nav-item">
-              Ask GPT
-            </Link>
-          </li>
           {user.current ? (
             <>
               <li className="nav-list">
@@ -53,17 +38,39 @@ function Navbar() {
                   Add Idea
                 </Link>
               </li>
-              <li className="nav-list" style={{position: "relative"}}>
-                <span className="user-profile-btn" onClick={()=> setShowProfile(!showPrfile)}>{shortName}</span>
+              <li className="nav-list">
+                <Link to="/assistant" className="nav-item">
+                  Assistant
+                </Link>
+              </li>
+              <li className="nav-list" style={{ position: "relative" }}>
+                <span
+                  className="user-profile-btn"
+                  onClick={() => setShowProfile(!showPrfile)}
+                >
+                  {shortName}
+                </span>
                 {showPrfile && <UserProfile />}
               </li>
             </>
           ) : (
-            <li className="nav-list">
-              <Link to="/login" className="nav-item login-btn">
-                Login
-              </Link>
-            </li>
+            <>
+              <li className="nav-list">
+                <a href="#features" className="nav-item">
+                  Features
+                </a>
+              </li>
+              <li className="nav-list">
+                <a href="#how-it-works" className="nav-item">
+                  How It Works
+                </a>
+              </li>
+              <li className="nav-list">
+                <Link to="/login" className="nav-item login-btn">
+                  Login
+                </Link>
+              </li>
+            </>
           )}
         </ul>
       </nav>

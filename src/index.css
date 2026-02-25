@@ -19,6 +19,8 @@
 
   --PRIMARY-BORDER: 1px solid var(--BORDER-COLOR);
   --BORDER-RADIUS-SM: 5px;
+  --BORDER-RADIUS-MD: 8px;
+  --BORDER-RADIUS-LG: 16px;
 
   --footer-height: 60px;
   --footer-background-color: #f1f1f1;
@@ -144,6 +146,11 @@ a {
   outline: none;
   border-radius: var(--BORDER-RADIUS-SM);
   cursor: pointer;
+}
+
+.custom-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
 }
 
 .custom-btn-sm {
