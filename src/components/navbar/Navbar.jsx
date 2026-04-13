@@ -26,14 +26,13 @@ function Navbar() {
     <>
       <nav>
         <ul>
-          <li className="nav-list">
-            <Link to="/" className="nav-item nav-item-active">
-              Home
-            </Link>
-          </li>
           {user.current ? (
             <>
-
+              <li className="nav-list">
+                <Link to="/" className="nav-item nav-item-active">
+                  Home
+                </Link>
+              </li>
               <li className="nav-list">
                 <Link to="/project/new" className="nav-item">
                   Add Project
@@ -61,16 +60,6 @@ function Navbar() {
             </>
           ) : (
             <>
-              <li className="nav-list">
-                <a href="#features" className="nav-item">
-                  Features
-                </a>
-              </li>
-              <li className="nav-list">
-                <a href="#how-it-works" className="nav-item">
-                  How It Works
-                </a>
-              </li>
               <li className="nav-list">
                 <Link to="/login" className="nav-item login-btn">
                   Login

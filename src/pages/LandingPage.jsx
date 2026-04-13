@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   const [activeFeature, setActiveFeature] = useState(0);
+
+  const featuresRef = useRef(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -64,6 +66,13 @@ const LandingPage = () => {
       desc: "Transform tracked ideas into completed projects",
     },
   ];
+
+  const scrollToSection = (ref) => {
+    ref.current.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    })
+  }
 
   return (
     <div className="landing-page-container">
@@ -132,7 +141,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className="features-section" id="features">
+      <section ref={featuresRef} className="features-section" id="features">
         <div className="features__inner">
           <div className="section-header">
             <h2 className="section-header__title">Complete Project Control</h2>
