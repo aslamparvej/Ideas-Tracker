@@ -33,9 +33,15 @@ function Navbar() {
           </li>
           {user.current ? (
             <>
+
               <li className="nav-list">
-                <Link to="/add-idea" className="nav-item">
-                  Add Idea
+                <Link to="/project/new" className="nav-item">
+                  Add Project
+                </Link>
+              </li>
+              <li className="nav-list">
+                <Link to="/projects" className="nav-item">
+                  My Projects
                 </Link>
               </li>
               <li className="nav-list">
