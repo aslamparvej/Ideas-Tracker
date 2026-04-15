@@ -2,13 +2,13 @@ import React,{useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { useUser } from '../../lib/context/user';
-import { useIdeas } from '../../lib/context/project';
+import { useProjects } from '../../lib/context/projects';
 
 import Loading from '../Loading';
 
 const AddProjects = () => {
     const user = useUser();
-    const ideas = useIdeas();
+    const projects = useProjects();
     const navigate = useNavigate()
 
     const [title, setTitle] = useState('');
@@ -27,7 +27,7 @@ const AddProjects = () => {
 
     const submitIdeaHandler = async ()=> {
         setLoading(true);
-        const addidea = await ideas.add({ userId: user.current.$id, title, description, githubLink, websiteLink, status })
+        const addidea = await projects.add({ userId: user.current.$id, title, description, githubLink, websiteLink, status })
         if(addidea){
             navigate('/');
             setLoading(false);

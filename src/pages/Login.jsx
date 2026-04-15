@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
 
 import { useUser } from '../lib/context/user';
-import { useIdeas } from '../lib/context/project';
+import { useProjects } from '../lib/context/projects';
 import Loading from './Loading'
 
 
 const Login = () => {
     const user = useUser();
-    const ideas = useIdeas();
+    const projects = useProjects();
     const navigate = useNavigate()
 
     const [email, setEmail] = useState("");
@@ -21,7 +21,7 @@ const Login = () => {
         const loggedIn =  await user.login(email, passsword);
         if(loggedIn){
             navigate('/');
-            ideas.init();
+            projects.init();
             setloading(false);
         }else {
             navigate('/login');

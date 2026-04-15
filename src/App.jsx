@@ -12,7 +12,7 @@ import Project from "./pages/Project/Project";
 import Projects from "./pages/Project/Projects";
 
 import { UserProvider, useUser } from "./lib/context/user";
-import { IdeasProvider } from "./lib/context/project";
+import { ProjectsProvider } from "./lib/context/projects";
 
 import "./App.css";
 import Footer from "./components/footer/Footer";
@@ -24,7 +24,7 @@ function App() {
     <BrowserRouter>
       <div className="app-container">
         <UserProvider>
-          <IdeasProvider>
+          <ProjectsProvider>
             <Header />
             <Routes>
               <Route path="/">
@@ -41,7 +41,7 @@ function App() {
               </Route>
             </Routes>
             <Footer />
-          </IdeasProvider>
+          </ProjectsProvider>
         </UserProvider>
       </div>
     </BrowserRouter>

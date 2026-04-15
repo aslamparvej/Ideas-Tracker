@@ -9,14 +9,13 @@ import FeedIcon from "@mui/icons-material/Feed";
 import { DateRange, Update  } from "@mui/icons-material";
 
 import { useUser } from "../../lib/context/user";
-import { useIdeas } from "../../lib/context/project";
+import { useProjects } from "../../lib/context/projects";
 
 const Projects = () => {
   const user = useUser();
-  const projects = useIdeas();
+  const projectData = useProjects();
   const navigate = useNavigate();
 
-  console.log("Projects: ", projects.current);
 
   const [searchQuery, setSearchQuery] = useState("");
   const [sortBy, setsortBy] = useState("updated");
@@ -25,7 +24,7 @@ const Projects = () => {
 
   // Filter and sort projects
   const getFilteredProjects = () => {
-    let filtered = projects.current;
+    let filtered = projectData.projects;
 
     // Search filter
     if (searchQuery) {

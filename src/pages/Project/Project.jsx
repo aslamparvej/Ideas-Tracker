@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { useIdeas } from "../../lib/context/project";
+import { useProjects } from "../../lib/context/projects";
 
 import { KeyboardBackspace, Edit, DateRange, Update } from "@mui/icons-material";
 
 const Project = () => {
   const { id } = useParams();
-  const ideas = useIdeas();
+  const projectsData = useProjects();
 
   const [showAddTask, setShowAddTask] = useState(false);
   const [newTaskTitle, setNewTaskTitle] = useState("");
@@ -87,7 +87,7 @@ const Project = () => {
     }[priority];
   };
 
-  const project = ideas.current.find((idea) => idea.$id === id);
+  const project = projectsData.current.find((idea) => idea.$id === id);
 
   // Calculate progress
   const completedTasks = tasks.filter((t) => t.completed).length;
@@ -108,7 +108,7 @@ const Project = () => {
     <div className="project-view">
       {/* Back button  */}
       <Link to="/" className="back-button">
-        <KeyboardBackspaceIcon className="back-button-icon" />
+        <KeyboardBackspace className="back-button-icon" />
         Back to Projects
       </Link>
 
