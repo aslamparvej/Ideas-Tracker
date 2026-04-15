@@ -8,8 +8,8 @@ import FeedIcon from "@mui/icons-material/Feed";
 
 import { DateRange, Update  } from "@mui/icons-material";
 
-import { useUser } from "../lib/context/user";
-import { useIdeas } from "../lib/context/ideas";
+import { useUser } from "../../lib/context/user";
+import { useIdeas } from "../../lib/context/project";
 
 const Projects = () => {
   const user = useUser();

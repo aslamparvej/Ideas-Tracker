@@ -1,22 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
 import { useUser } from "../lib/context/user";
 
-import Ideas from "./Ideas";
-import Footer from "../components/footer/Footer";
 import LandingPage from "./LandingPage";
-import Projects from "./Projects";
+import Dashboard from "./Dashboard/Dashboard";
 import Loading from "./Loading";
 
 const Home = () => {
   const user = useUser();
-  
+
+  if (user.loading) return <Loading />;
+
   return (
     <>
-      <div className="home-container">
-        {!user.current ? <LandingPage /> : <Projects />}
-      </div>
+      {user.current ? <Dashboard /> : <LandingPage />}
     </>
   );
 };

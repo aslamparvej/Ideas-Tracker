@@ -15,6 +15,7 @@ export function useUser() {
 export function UserProvider(props) {
   // User state
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   async function login(email, passsword) {
     try {
@@ -55,6 +56,8 @@ export function UserProvider(props) {
       setUser(loggedIn);
     } catch (err) {
       setUser(null);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -63,7 +66,7 @@ export function UserProvider(props) {
   }, []);
 
   return (
-    <userContext.Provider value={{ current: user, login, logout, register }}>
+    <userContext.Provider value={{ current: user, loading, login, logout, register }}>
       {props.children}
     </userContext.Provider>
   );

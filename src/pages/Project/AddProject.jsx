@@ -1,12 +1,12 @@
 import React,{useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { useUser } from '../lib/context/user';
-import { useIdeas } from '../lib/context/ideas';
+import { useUser } from '../../lib/context/user';
+import { useIdeas } from '../../lib/context/project';
 
-import Loading from './Loading';
+import Loading from '../Loading';
 
-const AddIdea = () => {
+const AddProjects = () => {
     const user = useUser();
     const ideas = useIdeas();
     const navigate = useNavigate()
@@ -91,4 +91,4 @@ const AddIdea = () => {
     )
 }
 
-export default AddIdea;
+export default AddProjects;

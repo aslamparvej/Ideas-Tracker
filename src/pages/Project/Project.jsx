@@ -1,13 +1,8 @@
 import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { useIdeas } from "../lib/context/ideas";
+import { useIdeas } from "../../lib/context/project";
 
-import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
-import EditIcon from "@mui/icons-material/Edit";
-import DeleteIcon from "@mui/icons-material/Delete";
-import CheckIcon from "@mui/icons-material/Check";
-
-import { DateRange, Update } from "@mui/icons-material";
+import { KeyboardBackspace, Edit, DateRange, Update } from "@mui/icons-material";
 
 const Project = () => {
   const { id } = useParams();

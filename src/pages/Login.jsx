@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate} from 'react-router-dom';
 
 import { useUser } from '../lib/context/user';
-import { useIdeas } from '../lib/context/ideas';
+import { useIdeas } from '../lib/context/project';
 import Loading from './Loading'
 
 
