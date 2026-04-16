@@ -7,26 +7,13 @@ import { useUser } from "../../lib/context/user";
 import UserProfile from "../ui/UserProfile";
 
 function Navbar() {
-  const user = useUser();
-
-  const [shortName, setShortName] = useState("");
-  const [showPrfile, setShowProfile] = useState(false);
-
-  useEffect(() => {
-    if (user.current) {
-      const nameArr = user.current.name?.split(" ");
-      if (nameArr) {
-        const shortNameVal = `${nameArr[0].charAt(0)}${nameArr[1].charAt(0)}`;
-        setShortName(shortNameVal);
-      }
-    }
-  }, [user]);
+  const { current } = useUser();
 
   return (
     <>
       <nav>
         <ul>
-          {user.current ? (
+          {current ? (
             <>
               <li className="nav-list">
                 <Link to="/" className="nav-item nav-item-active">
@@ -49,13 +36,7 @@ function Navbar() {
                 </Link>
               </li>
               <li className="nav-list" style={{ position: "relative" }}>
-                <span
-                  className="user-profile-btn"
-                  onClick={() => setShowProfile(!showPrfile)}
-                >
-                  {shortName}
-                </span>
-                {showPrfile && <UserProfile />}
+                <UserProfile />
               </li>
             </>
           ) : (
