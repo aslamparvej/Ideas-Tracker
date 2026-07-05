@@ -1638,6 +1638,16 @@
 
 /* Landing Page CSS :: Ends */
 
+/* Common CSS :: Begins */
+.page-title {
+  color: var(--TEXT-COLOR);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* Common CSS :: Ends */
+
+
 @media (min-width: 577px) and (max-width: 768px) {
   .app-container .navbar-container {
     display: none;

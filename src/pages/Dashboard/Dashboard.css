@@ -1,4 +1,44 @@
 .dashboard-container {
     min-height: 100vh;
     padding-top: 4.5rem;
+    display: flex;
+    background-color: #fafafa;
+}
+
+.dashboard-content {
+    flex: 1;
+    padding: 2rem;
+}
+
+.dashboard-header {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.dashboard-stats {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.stat-card {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--BORDER-COLOR);
+    background-color: #FFF;
+}
+
+.stat-card__label {
+    color: var(--TEXT_COLOR);
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.stat-card__value {
+    color: var(--PRIMARY-COLOR);
+    font-size: 2rem;
+    font-weight: 700;
 }
