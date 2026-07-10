@@ -1,5 +1,3 @@
-import React from "react";
-
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   return (
@@ -31,7 +29,7 @@ const Footer = () => {
       </div>
 
       <div className="footer__bottom">
-        <p>&copy; 2026 Project Tracker. All rights reserved.</p>
+        <p>&copy; {currentYear} Project Tracker. All rights reserved.</p>
       </div>
     </footer>
   );

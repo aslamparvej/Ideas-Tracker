@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const LandingPage = () => {
@@ -66,13 +66,6 @@ const LandingPage = () => {
       desc: "Transform tracked ideas into completed projects",
     },
   ];
-
-  const scrollToSection = (ref) => {
-    ref.current.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    })
-  }
 
   return (
     <div className="landing-page-container">

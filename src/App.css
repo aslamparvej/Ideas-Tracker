@@ -25,8 +25,9 @@
   border-bottom: var(--PRIMARY-BORDER);
 }
 
-
 .app-container header .header-container {
+  max-width: 1400px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -101,7 +102,6 @@
   right: 0;
 }
 
-
 /* User Profile Dropdown CSS */
 .user-profile-btn {
   width: 2.5rem;
@@ -125,7 +125,7 @@
   top: 3rem;
   right: 0;
   border-radius: var(--BORDER-RADIUS-SM);
-  background-color: #FFF;
+  background-color: #fff;
   box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
   display: block !important;
 }
@@ -170,7 +170,7 @@
 .logout-btn {
   width: 100%;
   padding: 0.5rem 1rem;
-  color: #FFF;
+  color: #fff;
   font-size: 1rem;
   border: none;
   border-radius: var(--BORDER-RADIUS-SM);
@@ -182,7 +182,6 @@
 .logout-btn:hover {
   background-color: #ad2222;
 }
-
 
 .login-btn {
   color: #fff !important;
@@ -198,7 +197,6 @@
   background-color: transparent;
   color: var(--PRIMARY-COLOR) !important;
 }
-
 
 /* --------- Header section :: Ends --------- */
 
@@ -256,14 +254,14 @@
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 900;
   margin-bottom: 1.5rem;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   letter-spacing: -1px;
 }
 
 .section-header__subtitle {
   font-size: 1.3rem;
   color: #666;
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
   max-width: 700px;
   margin: 0 auto;
 }
@@ -319,7 +317,7 @@
 
 .hero__eyebrow {
   font-size: 1rem;
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
   color: var(--PRIMARY-COLOR);
   font-weight: 600;
   letter-spacing: 2px;
@@ -333,7 +331,7 @@
   line-height: 1.1;
   margin-bottom: 2rem;
   letter-spacing: -2px;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 .hero__title em {
@@ -345,7 +343,7 @@
   font-size: 1.4rem;
   line-height: 1.8;
   margin-bottom: 3rem;
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
   color: #666;
   max-width: 600px;
 }
@@ -353,7 +351,7 @@
 .hero__actions {
   display: flex;
   gap: 1.5rem;
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
 }
 
 /* -- Feature card stack -- */
@@ -366,7 +364,7 @@
   position: absolute;
   width: 100%;
   padding: 2.5rem;
-  background: #FFF;
+  background: #fff;
   border-radius: var(--BORDER-RADIUS-SM);
   border: var(--PRIMARY-BORDER);
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
@@ -380,14 +378,14 @@
 .hero__card-title {
   font-size: 2rem;
   margin-bottom: 0.8rem;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 700;
 }
 
 .hero__card-desc {
   font-size: 1.1rem;
   color: #666;
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
   line-height: 1.7;
 }
 
@@ -413,8 +411,7 @@
   border: var(--PRIMARY-BORDER);
   border-radius: var(--BORDER-RADIUS-SM);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 0.4s;
+    box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.4s;
   cursor: pointer;
   position: relative;
   overflow: hidden;
@@ -452,7 +449,7 @@
 .feature-card__title {
   font-size: 2rem;
   margin-bottom: 1rem;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 700;
 }
 
@@ -460,7 +457,7 @@
   font-size: 1.15rem;
   line-height: 1.8;
   color: #666;
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
 }
 
 /* HOW IT WORKS SECTION :: Begins */
@@ -500,7 +497,7 @@
 .step-card__number {
   font-size: 5rem;
   font-weight: 900;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   color: var(--PRIMARY-COLOR);
   opacity: 0.2;
   line-height: 1;
@@ -509,14 +506,14 @@
 .step-card__title {
   font-size: 2rem;
   margin-bottom: 0.8rem;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-weight: 700;
 }
 
 .step-card__desc {
   font-size: 1.2rem;
   color: #666;
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
   line-height: 1.7;
 }
 
@@ -563,14 +560,14 @@
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 900;
   margin-bottom: 2rem;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   letter-spacing: -1px;
 }
 
 .cta__subtitle {
   font-size: 1.4rem;
   margin-bottom: 3rem;
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
   opacity: 0.95;
   line-height: 1.7;
 }
@@ -598,7 +595,7 @@
 }
 
 .page-header__title {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 3rem;
   font-weight: 900;
   color: var(--TEXT-COLOR);
@@ -642,7 +639,7 @@
   padding: 0.75rem 1rem 0.75rem 2.75rem;
   border: var(--PRIMARY-BORDER);
   border-radius: var(--BORDER-RADIUS-SM);
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
   font-size: 0.95rem;
   transition: all 0.3s;
 }
@@ -667,7 +664,7 @@
   padding: 0.75rem 2.5rem 0.75rem 1rem;
   border: var(--PRIMARY-BORDER);
   border-radius: var(--BORDER-RADIUS-SM);
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
   font-size: 0.95rem;
   background: white;
   cursor: pointer;
@@ -785,7 +782,7 @@
 }
 
 .project-card__title {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
@@ -829,7 +826,6 @@
 
 .empty-state__icon {
   margin-bottom: 1rem;
-
 }
 
 .empty-state__icon svg {
@@ -839,7 +835,7 @@
 }
 
 .empty-state__title {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.75rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -880,7 +876,7 @@
 }
 
 .project-header {
-  background: #FFF;
+  background: #fff;
   border: var(--PRIMARY-BORDER);
   border-radius: var(--BORDER-RADIUS-SM);
   padding: 2rem;
@@ -894,7 +890,6 @@
   margin-bottom: 1.5rem;
   gap: 2rem;
 }
-
 
 .project-header__title-group {
   flex: 1;
@@ -930,7 +925,7 @@
 }
 
 .project-header__title {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 2.5rem;
   font-weight: 900;
   margin-bottom: 0.75rem;
@@ -998,7 +993,11 @@
 
 .progress-bar__fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--PRIMARY-COLOR), var(--INPROGRESS-COLOR));
+  background: linear-gradient(
+    90deg,
+    var(--PRIMARY-COLOR),
+    var(--INPROGRESS-COLOR)
+  );
   border-radius: 20px;
   transition: width 0.6s ease;
 }
@@ -1019,7 +1018,7 @@
 }
 
 .tasks-section__title {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.75rem;
   font-weight: 700;
 }
@@ -1088,7 +1087,7 @@
   padding: 0.875rem 1rem;
   border: var(--PRIMARY-BORDER);
   border-radius: var(--BORDER-RADIUS-SM);
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
   font-size: 0.95rem;
   transition: all 0.3s;
 }
@@ -1107,7 +1106,7 @@
   padding: 0.875rem 2.5rem 0.875rem 1rem;
   border: var(--PRIMARY-BORDER);
   border-radius: var(--BORDER-RADIUS-SM);
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
   font-size: 0.95rem;
   background: white;
   cursor: pointer;
@@ -1255,7 +1254,6 @@
   font-size: 0.9rem;
   color: #bbb;
 }
-
 
 /* --------- Project View Page :: Ends --------- */
 
@@ -1518,16 +1516,13 @@
   animation: rotation 1s linear infinite;
 }
 
-
-
 /* --------- Loading section :: Ends --------- */
-
 
 /* --------- Footer Section :: Begins --------- */
 .footer {
   background: var(--footer-background-color);
   padding: 4rem 2rem 2rem;
-  font-family: 'Karla', sans-serif;
+  font-family: "Karla", sans-serif;
 }
 
 .footer__grid {
@@ -1543,7 +1538,7 @@
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 .footer__brand-desc {
@@ -1585,7 +1580,6 @@
 }
 
 /* --------- Footer Section :: Ends --------- */
-
 
 /* --------- Media Query section :: Begins --------- */
 @media (max-width: 576px) {
@@ -1634,6 +1628,10 @@
     gap: 1rem;
     grid-template-columns: 1fr;
   }
+
+  .footer__grid {
+    grid-template-columns: revert;
+  }
 }
 
 /* Landing Page CSS :: Ends */
@@ -1646,7 +1644,6 @@
 }
 
 /* Common CSS :: Ends */
-
 
 @media (min-width: 577px) and (max-width: 768px) {
   .app-container .navbar-container {
@@ -1690,6 +1687,7 @@
   }
 }
 
-@media (min-width: 1400px) {}
+@media (min-width: 1400px) {
+}
 
 /* --------- Media Query section :: Ends --------- */

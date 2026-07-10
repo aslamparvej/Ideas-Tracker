@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import { useUser } from "../../lib/context/user";
+import scrollToSection from "../../utils/scrollTo";
 
 // Import components
 import UserProfile from "../ui/UserProfile";
@@ -41,6 +42,21 @@ function Navbar() {
             </>
           ) : (
             <>
+              <li className="nav-list">
+                <span onClick={()=> scrollToSection("features")} className="nav-item">
+                  Features
+                </span>
+              </li>
+              <li className="nav-list">
+                <span onClick={()=> scrollToSection("how-it-works")} className="nav-item">
+                  How It Works
+                </span>
+              </li>
+              <li className="nav-list">
+                <span onClick={()=> scrollToSection("contact")} className="nav-item">
+                  Contact
+                </span>
+              </li>
               <li className="nav-list">
                 <Link to="/login" className="nav-item login-btn">
                   Login

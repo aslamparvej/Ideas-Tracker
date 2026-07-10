@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Header from "./components/header/Header";
@@ -11,15 +10,15 @@ import Assistant from "./pages/Assistant";
 import Project from "./pages/Project/Project";
 import Projects from "./pages/Project/Projects";
 
-import { UserProvider, useUser } from "./lib/context/user";
+import { UserProvider } from "./lib/context/user";
 import { ProjectsProvider } from "./lib/context/projects";
 
 import "./App.css";
 import Footer from "./components/footer/Footer";
 
-function App() {
-  const [loading, setLoading] = useState(true);
 
+
+function App() {
   return (
     <BrowserRouter>
       <div className="app-container">

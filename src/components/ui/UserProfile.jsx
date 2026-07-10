@@ -1,12 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link ,useNavigate } from "react-router-dom";
 import { useUser } from "../../lib/context/user";
 
 const UserProfile = () => {
-  const { current } = useUser();
+  const { current, logout } = useUser();
   const navigate = useNavigate();
   const dropdownRef = useRef(null);
 
+  const [loading, setLoading] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
 
   // Get name initials
@@ -38,7 +39,7 @@ const UserProfile = () => {
 
   const logoutHandler = async () => {
     setLoading(true);
-    const logouted = await user.logout();
+    const logouted = await logout();
     if (logouted) {
       navigate("/");
       setLoading(false);
@@ -58,15 +59,15 @@ const UserProfile = () => {
             <span className="user-profile-btn">{getInitials()}</span>
             <div>
               <p className="user-details__name">{current.name}</p>
-              <p class="user-details__email">{current.email}</p>
+              <p className="user-details__email">{current.email}</p>
             </div>
           </li>
           <li className="user-menu-list">
             <Link to="/profile">Profile</Link>
-            <Link to="/settigns">Setting</Link>
+            <Link to="/settings">Setting</Link>
           </li>
           <li>
-            <button className="logout-btn" onClick={logoutHandler}>
+            <button className="logout-btn" onClick={()=> logoutHandler()}>
               Logout
             </button>
           </li>
