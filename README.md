@@ -87,7 +87,7 @@ src/
 ![Dashboard](public/assets/dashboard.png)
 
 ### Project Details
-![Project Details](public/assets/dashboard.png)
+![Project Details](public/assets/project-details.png)
 
 ---
 
