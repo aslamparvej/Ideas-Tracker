@@ -1,73 +1,41 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useProjects } from "../../lib/context/projects";
+import { useTask } from "../../lib/context/task";
+import { useUser } from "../../lib/context/user";
 
-import { KeyboardBackspace, Edit, DateRange, Update } from "@mui/icons-material";
+import { Edit, Calendar, ChevronLeft, Trash2, FileText } from "lucide-react";
 
 const Project = () => {
   const { id } = useParams();
   const projectsData = useProjects();
+  const { init, tasks, add, complete } = useTask();
+  const { current } = useUser();
 
   const [showAddTask, setShowAddTask] = useState(false);
   const [newTaskTitle, setNewTaskTitle] = useState("");
-  const [newTaskPriority, setNewTaskPriority] = useState("");
-  // Tasks data
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      title: "Design mockups for homepage",
-      priority: "high",
-      completed: true,
-      createdAt: "2024-01-15",
-    },
-    {
-      id: 2,
-      title: "Implement responsive navigation",
-      priority: "high",
-      completed: true,
-      createdAt: "2024-01-16",
-    },
-    {
-      id: 3,
-      title: "Build product listing page",
-      priority: "high",
-      completed: false,
-      createdAt: "2024-01-20",
-    },
-    {
-      id: 4,
-      title: "Integrate payment gateway",
-      priority: "medium",
-      completed: false,
-      createdAt: "2024-01-25",
-    },
-    {
-      id: 5,
-      title: "Set up user authentication",
-      priority: "high",
-      completed: false,
-      createdAt: "2024-02-01",
-    },
-    {
-      id: 6,
-      title: "Add search functionality",
-      priority: "medium",
-      completed: false,
-      createdAt: "2024-02-05",
-    },
-    {
-      id: 7,
-      title: "Write documentation",
-      priority: "low",
-      completed: false,
-      createdAt: "2024-02-10",
-    },
-  ]);
+  const [newTaskPriority, setNewTaskPriority] = useState("low");
 
-  const handleToggleComplete = (taskId) => {
-    setTasks(tasks.map(t =>
-      t.id === taskId ? { ...t, completed: !t.completed } : t
-    ));
+  useEffect(() => {
+    if (current?.$id && id) {
+      init(current.$id, id);
+    }
+  }, [current, id, init]);
+
+  const hadleSubmit = async(e) => {
+    e.preventDefault();
+    const newTask = {
+      ideas: id,
+      userId: current.$id,
+      title: newTaskTitle,
+      priority: newTaskPriority,
+    };
+    await add(newTask);
+    clearAddTaskForm();
+  };
+  const clearAddTaskForm = () => {
+    setNewTaskTitle("");
+    setNewTaskPriority("low");
   };
 
   const formatDate = (dateString) => {
@@ -81,13 +49,13 @@ const Project = () => {
 
   const getPriorityLabel = (priority) => {
     return {
-      low: 'Low',
-      medium: 'Medium',
-      high: 'High',
+      low: "Low",
+      medium: "Medium",
+      high: "High",
     }[priority];
   };
 
-  const project = projectsData.current.find((idea) => idea.$id === id);
+  const project = projectsData.projects.find((idea) => idea.$id === id);
 
   // Calculate progress
   const completedTasks = tasks.filter((t) => t.completed).length;
@@ -108,7 +76,7 @@ const Project = () => {
     <div className="project-view">
       {/* Back button  */}
       <Link to="/" className="back-button">
-        <KeyboardBackspace className="back-button-icon" />
+        <ChevronLeft className="back-button-icon" />
         Back to Projects
       </Link>
 
@@ -127,16 +95,16 @@ const Project = () => {
 
           <div className="project-header__actions">
             <button
-              className="custom-btn custom-btn-sm custom-btn-secondary"
+              className="custom-btn custom-btn-secondary"
               title="Edit Project"
             >
-              <EditIcon />
+              <Edit size={16} />
             </button>
             <button
-              className="custom-btn custom-btn-sm custom-btn-danger"
+              className="custom-btn custom-btn-danger"
               title="Delete Project"
             >
-              <DeleteIcon />
+              <Trash2 size={16} />
             </button>
           </div>
         </div>
@@ -144,19 +112,19 @@ const Project = () => {
         <div className="project-header__meta">
           <div className="project-header__meta-item">
             <span>
-              <DateRange />
+              <Calendar />
             </span>
             <span>Created {formatDate(project.$createdAt)}</span>
           </div>
           <div className="project-header__meta-item">
             <span>
-              <Update />
+              <Edit />
             </span>
             <span>Last updated {formatDate(project.$updatedAt)}</span>
           </div>
           <div className="project-header__meta-item">
             <span>
-              <CheckIcon />
+              <ChevronLeft />
             </span>
             <span>
               {completedTasks} of {totalTasks} tasks completed
@@ -198,7 +166,7 @@ const Project = () => {
         </div>
 
         {showAddTask && (
-          <form className="add-task-form" onSubmit="">
+          <form className="add-task-form" onSubmit={hadleSubmit}>
             <div className="add-task-form__input-group">
               <input
                 type="text"
@@ -214,9 +182,10 @@ const Project = () => {
                 value={newTaskPriority}
                 onChange={(e) => setNewTaskPriority(e.target.value)}
               >
-                <option value="low">Low Priority</option>
-                <option value="medium">Medium Priority</option>
-                <option value="high">High Priority</option>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+                <option value="urgent">Urgent</option>
               </select>
             </div>
             <div className="add-task-form__actions">
@@ -243,7 +212,7 @@ const Project = () => {
           <div className="tasks-list">
             {tasks.map((task) => (
               <div
-                key={task.id}
+                key={task.$id}
                 className={`task-item ${
                   task.completed ? "task-item--completed" : ""
                 }`}
@@ -252,14 +221,16 @@ const Project = () => {
                   className={`task-item__checkbox${
                     task.completed ? " task-item__checkbox--checked" : ""
                   }`}
-                  onClick={() => handleToggleComplete(task.id)}
+                  onClick={() => complete(task.$id)}
                 >
                   {task.completed && "✓"}
                 </div>
 
                 <div className="task-item__content">
                   <span className="task-item__title">{task.title}</span>
-                  <span className={`task-item__priority task-item__priority--${task.priority}`}>
+                  <span
+                    className={`task-item__priority task-item__priority--${task.priority}`}
+                  >
                     {getPriorityLabel(task.priority)}
                   </span>
                 </div>
@@ -270,14 +241,14 @@ const Project = () => {
                     onClick={() => handleEditTask(task)}
                     title="Edit task"
                   >
-                    <EditIcon />
+                    <Edit size={16} />
                   </button>
                   <button
                     className="task-item__action-btn task-item__action-btn--danger"
                     onClick={() => handleDeleteTask(task.id)}
                     title="Delete task"
                   >
-                    <DeleteIcon />
+                    <Trash2 size={16} />
                   </button>
                 </div>
               </div>
@@ -285,7 +256,9 @@ const Project = () => {
           </div>
         ) : (
           <div className="tasks-empty">
-            <div className="tasks-empty__icon">📋</div>
+            <div className="tasks-empty__icon">
+              <FileText size={48} />
+            </div>
             <div className="tasks-empty__text">No tasks yet</div>
             <div className="tasks-empty__subtext">
               Add your first task to get started
