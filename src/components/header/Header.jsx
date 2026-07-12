@@ -1,8 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import TipsAndUpdatesIcon from "@mui/icons-material/TipsAndUpdates";
-
 import Navbar from "../navbar/Navbar";
 
 const Header = () => {
@@ -25,7 +23,6 @@ const Header = () => {
       <div className="header-container">
         <div className="logo-container">
           <Link to="/" className="logo">
-            <TipsAndUpdatesIcon />
             Project Tracker
           </Link>
         </div>

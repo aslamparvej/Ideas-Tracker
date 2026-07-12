@@ -1,6 +1,4 @@
-import React from "react";
-
-import AddIcon from "@mui/icons-material/Add";
+import { Plus } from "lucide-react";
 
 const AssistantSidebar = () => {
   return (
@@ -11,7 +9,7 @@ const AssistantSidebar = () => {
           Ask me anything about your projects!
         </p>
         <button className="custom-btn custom-btn-primary new-chat-btn">
-          <AddIcon sx={{ fontSize: 18 }} /> New Chat
+          <Plus sx={{ fontSize: 18 }} /> New Chat
         </button>
       </div>
       <div className="assistant-sidebar__history-container"></div>

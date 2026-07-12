@@ -40,6 +40,7 @@ html {
 
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: #fafafa;
 }
 
 input:-internal-autofill-selected {
@@ -68,7 +69,26 @@ a {
   color: var(--LINK-COLOR);
 }
 
+table {
+  width: 100%;
+}
 
+table th {
+  font-size: 1rem;
+  font-weight: 500;
+}
+table td {
+  font-size: 0.875rem;
+}
+table th, table td {
+  padding: 0.5rem 0;
+  text-align: start;
+  border-bottom: 1px solid var(--BORDER-COLOR);
+}
+
+table tr:last-child td {
+  border-bottom: 0;
+}
 /* --------- Animations :: Begins --------- */
 @keyframes rotation {
   0% {
@@ -148,6 +168,8 @@ a {
   outline: none;
   border-radius: var(--BORDER-RADIUS-SM);
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .custom-btn:disabled {

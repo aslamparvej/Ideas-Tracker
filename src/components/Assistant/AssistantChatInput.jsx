@@ -1,9 +1,6 @@
-import React,{useState} from "react";
-
-import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import { ArrowUp } from 'lucide-react';
 
 const AssistantChatInput = ({ onSubmitHandler, inputValue, setInputValue }) => {
-  
 
   return (
     <div className="assistant-chat-container">
@@ -27,7 +24,7 @@ const AssistantChatInput = ({ onSubmitHandler, inputValue, setInputValue }) => {
             className="custom-btn custom-btn-lg custom-btn-primary assistant-chat__send-btn"
             disabled={inputValue.trim() === ""}
           >
-            <ArrowUpwardIcon sx={{ fontSize: 18 }} /> Send
+            <ArrowUp sx={{ fontSize: 18 }} /> Send
           </button>
         </div>
 

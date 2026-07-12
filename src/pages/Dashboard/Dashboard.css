@@ -1,44 +1,114 @@
 .dashboard-container {
-    min-height: 100vh;
-    padding-top: 4.5rem;
-    display: flex;
-    background-color: #fafafa;
+  min-height: 100vh;
+  max-width: 1400px;
+  padding-top: 4.5rem;
+  margin: 0 auto;
+  display: flex;
 }
 
 .dashboard-content {
-    flex: 1;
-    padding: 2rem;
+  flex: 1;
+  padding: 2rem 0;
 }
 
 .dashboard-header {
-    display: flex;
-    align-items: start;
-    justify-content: space-between;
-    margin-bottom: 2rem;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 }
 
 .dashboard-stats {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .stat-card {
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid var(--BORDER-COLOR);
-    background-color: #FFF;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--BORDER-COLOR);
+  background-color: #fff;
 }
 
 .stat-card__label {
-    color: var(--TEXT_COLOR);
-    font-size: 1.25rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
+  color: var(--TEXT_COLOR);
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 .stat-card__value {
-    color: var(--PRIMARY-COLOR);
-    font-size: 2rem;
-    font-weight: 700;
+  color: var(--PRIMARY-COLOR);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.dashboard-card-container {
+  margin-top: 2rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.dashboard-card {
+  padding: 1rem;
+  border-radius: var(--BORDER-RADIUS-SM);
+  border: 1px solid var(--BORDER-COLOR);
+  background-color: #fff;
+}
+
+.dashboard-card__header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-card__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.chart-card {
+  min-height: 15rem;
+}
+
+.recent-activities {
+  grid-row: span 2;
+}
+
+.recent-project-card {
+  grid-column: span 2;
+}
+
+.card-link {
+    display: flex;
+    gap: 0.35rem;
+    align-items: center;
+}
+
+@media (max-width: 576px) {
+  .dashboard-card-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .recent-activities,
+  .recent-project-card {
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .dashboard-card {
+    padding: 0.75rem;
+  }
+
+  .chart-card {
+    min-height: 12rem;
+  }
+
+  .dashboard-card__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
 }

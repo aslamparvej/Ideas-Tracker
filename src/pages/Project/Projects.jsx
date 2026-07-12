@@ -1,12 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import MenuIcon from "@mui/icons-material/Menu";
-import CalendarViewMonthIcon from "@mui/icons-material/CalendarViewMonth";
-import SearchIcon from "@mui/icons-material/Search";
-import FeedIcon from "@mui/icons-material/Feed";
-
-import { DateRange, Update  } from "@mui/icons-material";
+import { Hamburger, Calendar, Search, File, CalendarDays, Edit } from "lucide-react";
 
 import { useUser } from "../../lib/context/user";
 import { useProjects } from "../../lib/context/projects";
@@ -89,7 +84,7 @@ const Projects = () => {
         <div className="toolbar__section">
           <div className="toolbar__search">
             <span className="toolbar__search-icon">
-              <SearchIcon />
+              <Search />
             </span>
             <input
               type="text"
@@ -129,7 +124,7 @@ const Projects = () => {
             }`}
             onClick={() => setViewMode("grid")}
           >
-            <CalendarViewMonthIcon />
+            <Calendar />
           </button>
           <button
             className={`toolbar__view-btn${
@@ -137,7 +132,7 @@ const Projects = () => {
             }`}
             onClick={() => setViewMode("list")}
           >
-            <MenuIcon />
+            <Hamburger />
           </button>
         </div>
       </div>
@@ -146,7 +141,7 @@ const Projects = () => {
       {filteredProjects.length <= 0 ? (
         <div className="empty-state">
           <div className="empty-state__icon">
-            <FeedIcon style={{ fontSize: "4rem" }} />
+            <File style={{ fontSize: "4rem" }} />
           </div>
           <h2 className="empty-state__title">No Projects Found</h2>
         </div>
@@ -186,13 +181,13 @@ const Projects = () => {
                   <div className="project-card__meta">
                     <div className="project-card__meta-item">
                       <span>
-                        <DateRange />
+                        <CalendarDays />
                       </span>
                       <span>Created {formatDate(project.$createdAt)}</span>
                     </div>
                     <div className="project-card__meta-item">
                       <span>
-                        <Update />
+                        <Edit />
                       </span>
                       <span>Updated {formatDate(project.$updatedAt)}</span>
                     </div>
