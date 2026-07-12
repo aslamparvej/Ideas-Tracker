@@ -84,10 +84,10 @@ src/
 ## Screenshots
 
 ### Dashboard
-![Dashboard](/assets/dashboard.png)
+![Dashboard](public/assets/dashboard.png)
 
 ### Project Details
-![Project Details](/assets/dashboard.png)
+![Project Details](public/assets/dashboard.png)
 
 ---
 
